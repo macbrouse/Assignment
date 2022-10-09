@@ -4,6 +4,8 @@ Run the file server.js using the following commands
 
 ``node server.js``
 
+The assignmentdb.db file is the database file for sqlite db
+
 - Hit the `localhost:3000/posts` with `POST` method along with title, body and category to insert a new Post
 - Hit the `localhost:3000/posts` with `GET` method to get the list of all the posts
 
