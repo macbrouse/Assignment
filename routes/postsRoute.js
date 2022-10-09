@@ -15,11 +15,15 @@ route.post('/', async (req, res) => {
   })
 
 route.get('/',async (req,res)=>{
+    const page=req.query.page
+    const limit=req.query.limit
+    const startIndex=(page-1)*limit
+    const endIndex=page*limit
     const posts = await getPosts()
     if (!posts){
         return res.status(204).send("No posts found")
     }
-    res.status(200).send(posts)
+    res.status(200).send(posts.slice(startIndex,endIndex))
 })
 
   module.exports={
